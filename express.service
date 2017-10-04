@@ -1,0 +1,14 @@
+[Unit]
+Description=express server
+
+[Service]
+ExecStart=/var/app/maxlew.is/app.js
+Restart=always
+User=max
+Group=max
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/var/app/maxlew.is
+
+[Install]
+WantedBy=multi-user.target
