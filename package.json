@@ -28,7 +28,6 @@
     "express": "^4.16.1",
     "morgan": "^1.9.0",
     "rxjs": "^5.4.2",
-    "ui-router-ng2": "^1.0.0-beta.5",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
