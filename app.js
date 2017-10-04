@@ -8,6 +8,6 @@ app.get('/', function (req, res) {
 
 app.use(express.static('dist'));
 
-app.listen(8080, function () {
+app.listen(80, function () {
   console.log('listening');
 });
