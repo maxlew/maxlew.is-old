@@ -2,7 +2,7 @@
 Description=express server
 
 [Service]
-ExecStart=/var/app/maxlew.is/app.js
+ExecStart=/usr/bin/node /var/app/maxlew.is/app.js
 Restart=always
 User=max
 Group=max
