@@ -1,0 +1,10 @@
+.piano-key {
+  transition: 250ms fill;
+  cursor: pointer;
+  &.white-key:hover {
+    fill: #efefef;
+  }
+  &.black-key:hover {
+    fill: #000000;
+  }
+}
