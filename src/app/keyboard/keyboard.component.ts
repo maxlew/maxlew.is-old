@@ -24,6 +24,10 @@ export class KeyboardComponent implements OnInit {
       }
     }).toMaster();
 
+    this.socket.on('notePlayed', function (data) {
+      console.log(data);
+      this.otherPlaysNote(data.note);
+    });
 
   }
 
@@ -72,10 +76,6 @@ export class KeyboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.socket.on('notePlayed', function (data) {
-      console.log(data);
-      this.otherPlaysNote(data.note);
-    });
   }
 
 }
