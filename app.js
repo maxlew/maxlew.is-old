@@ -5,12 +5,12 @@ const app = module.exports.app = express();
 const server = http.createServer(app);
 const io = require('socket.io').listen(server);
 
-server.get('/', function (req, res) {
+app.get('/', function (req, res) {
   console.log(__dirname + '/dist/index.html');
   res.sendFile(__dirname + '/dist/index.html');
 });
 
-server.use(express.static('dist'));
+app.use(express.static('dist'));
 
 server.listen(80, function () {
   console.log('listening');
