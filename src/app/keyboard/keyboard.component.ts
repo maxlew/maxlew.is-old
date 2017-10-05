@@ -4,6 +4,8 @@ import { keyBindings } from './keybindings.const';
 declare const Tone: any;
 declare const io: any;
 
+const socket = io('http://35.197.167.175/');
+
 @Component({
   selector: 'app-keyboard',
   templateUrl: './keyboard.component.html',
@@ -15,7 +17,6 @@ export class KeyboardComponent implements OnInit {
   yourPlayedNotes = [];
   othersPlayedNotes = [];
   octave = 1;
-  socket = io('http://35.197.167.175/');
 
   constructor() {
     this.synth = new Tone.PolySynth(6, Tone.Synth, {
@@ -24,16 +25,11 @@ export class KeyboardComponent implements OnInit {
       }
     }).toMaster();
 
-    this.socket.on('notePlayed', function (data) {
-      console.log(data);
-      this.otherPlaysNote(data.note);
-    });
-
   }
 
   playNote(note: string) {
     this.synth.triggerAttackRelease(note, '4n');
-    this.socket.emit('notePlayed', { note }, function () {
+    socket.emit('notePlayed', { note }, function () {
       console.log('emitted note');
     });
     if (this.yourPlayedNotes.length >= 6) {
@@ -43,12 +39,12 @@ export class KeyboardComponent implements OnInit {
   }
 
   otherPlaysNote(note: string) {
-    this.playNote(note);
     this.synth.triggerAttackRelease(note, '4n');
     if (this.othersPlayedNotes.length >= 6) {
       this.othersPlayedNotes.splice(0, 1);
     }
     this.othersPlayedNotes.push(note);
+    console.log(this.othersPlayedNotes);
   }
 
   noteClass(note: string) {
@@ -75,7 +71,11 @@ export class KeyboardComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
+
+const keyBoard = new KeyboardComponent();
+socket.on('notePlayed', function (data) {
+  keyBoard.otherPlaysNote(data);
+});
