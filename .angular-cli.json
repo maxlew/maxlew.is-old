@@ -22,7 +22,7 @@
         "styles.scss"
       ],
       "scripts": [
-        "../node_modules/tone/build/Tone.min.js"
+        "../node_modules/tone/build/Tone.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
