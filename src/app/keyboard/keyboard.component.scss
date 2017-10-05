@@ -1,10 +1,24 @@
-.piano-key {
-  transition: 250ms fill;
-  cursor: pointer;
-  &.white-key:hover {
-    fill: #efefef;
-  }
-  &.black-key:hover {
-    fill: #000000;
+.keyboard-container {
+  width: 2040px;
+  height: 200px;
+  .piano-key {
+    transition: 250ms fill;
+    cursor: pointer;
+    &.white-key {
+      &:hover {
+        fill: #efefef;
+      }
+      &:active {
+        fill: #ACACAC;
+      }
+    }
+    &.black-key{
+      &:hover {
+        fill: #333333;
+      }
+      &:active {
+        fill: #000000;
+      }
+    }
   }
 }
