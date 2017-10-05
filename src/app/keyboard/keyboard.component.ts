@@ -33,6 +33,7 @@ export class KeyboardComponent implements OnInit {
       this.yourPlayedNotes.splice(0, 1);
     }
     this.yourPlayedNotes.push(note);
+    this.socket.emit('notePlayed', { note });
   }
 
   otherPlaysNote(note: string) {

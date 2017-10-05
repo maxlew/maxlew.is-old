@@ -18,5 +18,7 @@ server.listen(80, function () {
 
 
 io.on('connection', function (socket) {
-  console.log('testing');
+  socket.on('notePlayed', function(data){
+		socket.broadcast.emit('notePlayed', data.note);
+	});
 });
