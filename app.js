@@ -18,7 +18,8 @@ server.listen(80, function () {
 
 
 io.on('connection', function (socket) {
-  socket.on('notePlayed', function(data){
+  socket.on('notePlayed', function (data) {
+    console.log('notePlayed', data);
 		socket.broadcast.emit('notePlayed', data.note);
 	});
 });
