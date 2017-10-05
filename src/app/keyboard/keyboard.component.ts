@@ -15,7 +15,7 @@ export class KeyboardComponent implements OnInit {
   yourPlayedNotes = [];
   othersPlayedNotes = [];
   octave = 1;
-  socket = io('http://35.197.167.175/:8080');
+  socket = io('http://35.197.167.175/');
 
   constructor() {
     this.synth = new Tone.PolySynth(6, Tone.Synth, {
@@ -29,11 +29,13 @@ export class KeyboardComponent implements OnInit {
 
   playNote(note: string) {
     this.synth.triggerAttackRelease(note, '4n');
+    this.socket.emit('notePlayed', { note }, function () {
+      console.log('emitted note');
+    });
     if (this.yourPlayedNotes.length >= 6) {
       this.yourPlayedNotes.splice(0, 1);
     }
     this.yourPlayedNotes.push(note);
-    this.socket.emit('notePlayed', { note });
   }
 
   otherPlaysNote(note: string) {
