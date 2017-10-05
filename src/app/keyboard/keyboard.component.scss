@@ -1,3 +1,6 @@
+$yourColors: #0071A7, #13B0A5, #67BC9A, #B4D6A4, #F8F2AB;
+$othersColors: #2E112D, #540032, #820333, #C9283E, #F0433A;
+
 .keyboard-container {
   width: 2040px;
   height: 200px;
@@ -19,6 +22,16 @@
       &:active {
         fill: #000000;
       }
+    }
+  }
+  @for $i from 1 through length($yourColors) {
+    .piano-key.triggered-by-you-#{$i} {
+        fill: nth($yourColors, $i);
+    }
+  }
+  @for $i from 1 through length($othersColors) {
+    .piano-key.triggered-by-other-#{$i} {
+        fill: nth($othersColors, $i);
     }
   }
 }

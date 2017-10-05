@@ -1,5 +1,8 @@
 import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import { keyBindings } from './keybindings.const';
+
 declare const Tone: any;
+declare const io: any;
 
 @Component({
   selector: 'app-keyboard',
@@ -9,6 +12,9 @@ declare const Tone: any;
 export class KeyboardComponent implements OnInit {
 
   synth;
+  yourPlayedNotes = [];
+  othersPlayedNotes = [];
+  octave = 1;
 
   constructor() {
     this.synth = new Tone.PolySynth(6, Tone.Synth, {
@@ -20,69 +26,42 @@ export class KeyboardComponent implements OnInit {
 
   playNote(note: string) {
     this.synth.triggerAttackRelease(note, '4n');
+    if (this.yourPlayedNotes.length >= 6) {
+      this.yourPlayedNotes.splice(0, 1);
+    }
+    this.yourPlayedNotes.push(note);
+  }
+
+  otherPlaysNote(note: string) {
+    this.playNote(note);
+    this.synth.triggerAttackRelease(note, '4n');
+    if (this.othersPlayedNotes.length >= 6) {
+      this.othersPlayedNotes.splice(0, 1);
+    }
+    this.othersPlayedNotes.push(note);
+  }
+
+  noteClass(note: string) {
+    if (this.yourPlayedNotes.indexOf(note) !== -1) {
+      return 'triggered-by-you-' + this.yourPlayedNotes.indexOf(note);
+    }
+    if (this.othersPlayedNotes.indexOf(note) !== -1) {
+      return 'triggered-by-other-' + this.othersPlayedNotes.indexOf(note);
+    }
+    return '';
   }
 
   @HostListener('window:keydown', ['$event'])
   keyboardInput(event: KeyboardEvent) {
-    // TODO: octave control
-    switch (event.keyCode) {
-      case 65: // a
-        this.playNote('A3');
-        break;
-      case 83: // s
-        this.playNote('B3');
-        break;
-      case 68: // d
-        this.playNote('C4');
-        break;
-      case 70: // f
-        this.playNote('D4');
-        break;
-      case 71: // g
-        this.playNote('E4');
-        break;
-      case 72: // h
-        this.playNote('F4');
-        break;
-      case 74: // j
-        this.playNote('G4');
-        break;
-      case 75: // k
-        this.playNote('A4');
-        break;
-      case 76: // l
-        this.playNote('B4');
-        break;
-      case 81: // q
-        this.playNote('G#3');
-        break;
-      case 87: // w
-        this.playNote('A#3');
-        break;
-      case 69: // e
-        // this.playNote(w'A#3');
-        break;
-      case 82: // r
-        this.playNote('C#4');
-        break;
-      case 84: // t
-        this.playNote('D#4');
-        break;
-      case 89: // y
-        // this.playNote('A#3');
-        break;
-      case 85: // u
-        this.playNote('F#4');
-        break;
-      case 73: // i
-        this.playNote('G#4');
-        break;
-      case 79: // o
-        this.playNote('A#4');
-        break;
-      case 8: // p
-        // this.playNote('A#3');
-        break;
+    const note = keyBindings[this.octave][event.keyCode];
+    if (note) {
+      this.playNote(note);
+    }
+    if (event.keyCode === 90 && this.octave > 0) {
+      this.octave--;
+    }
+    if (event.keyCode === 88 && this.octave < 2) {
+      this.octave++;
     }
   }
 

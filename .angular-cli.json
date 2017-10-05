@@ -22,7 +22,8 @@
         "styles.scss"
       ],
       "scripts": [
-        "../node_modules/tone/build/Tone.js"
+        "../node_modules/tone/build/Tone.js",
+        "../node_modules/socket.io-client/dist/socket.io.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
