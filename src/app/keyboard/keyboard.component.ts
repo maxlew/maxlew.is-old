@@ -15,6 +15,7 @@ export class KeyboardComponent implements OnInit {
   yourPlayedNotes = [];
   othersPlayedNotes = [];
   octave = 1;
+  socket = io('http://35.197.167.175/:8080');
 
   constructor() {
     this.synth = new Tone.PolySynth(6, Tone.Synth, {
@@ -22,6 +23,8 @@ export class KeyboardComponent implements OnInit {
         partials : [0, 2, 3, 4],
       }
     }).toMaster();
+
+
   }
 
   playNote(note: string) {
@@ -66,6 +69,10 @@ export class KeyboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.socket.on('notePlayed', function (data) {
+      console.log(data);
+      this.otherPlaysNote(data.note);
+    });
   }
 
 }
