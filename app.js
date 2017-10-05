@@ -1,18 +1,18 @@
 #!/usr/bin/env node
+const http 	= require('http');
+const express = require('express');
+const app = module.exports.app = express();
+const server = http.createServer(app);
+const io = require('socket.io').listen(server);
 
-const express = require('express')
-
-const app = express();
-const io = require('socket.io')(app);
-
-app.get('/', function (req, res) {
+server.get('/', function (req, res) {
   console.log(__dirname + '/dist/index.html');
   res.sendFile(__dirname + '/dist/index.html');
 });
 
-app.use(express.static('dist'));
+server.use(express.static('dist'));
 
-app.listen(80, function () {
+server.listen(80, function () {
   console.log('listening');
 });
 
