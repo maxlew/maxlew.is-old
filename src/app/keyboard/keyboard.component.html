@@ -3,110 +3,110 @@
 	<defs></defs>
 		<g id="piano-keyboard">
 			<g id="octave-1">
-				<rect id="octave-1-A-key" class="piano-key white-key" data-piano-key="A" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
-				<rect id="octave-1-B-key" class="piano-key white-key" data-piano-key="B" stroke="#555555" fill="#FFFFF7" x="80" y="0" width="80" height="400"></rect>
-				<rect id="octave-1-A#-key" class="piano-key black-key" data-piano-key="A#" stroke="#979797" fill="#4B4B4B" x="60" y="0" width="40" height="280"></rect>
+				<rect id="octave-1-A-key" (click)="playNote('A0')" class="piano-key white-key" data-piano-key="A" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
+				<rect id="octave-1-B-key" (click)="playNote('B0')" class="piano-key white-key" data-piano-key="B" stroke="#555555" fill="#FFFFF7" x="80" y="0" width="80" height="400"></rect>
+				<rect id="octave-1-A#-key" (click)="playNote('A#0')" class="piano-key black-key" data-piano-key="A#" stroke="#979797" fill="#4B4B4B" x="60" y="0" width="40" height="280"></rect>
 			</g>
 			<g id="octave-2" transform="translate(160.000000, 0.000000)">
-				<rect id="octave-2-C-key" class="piano-key white-key" data-piano-key="C" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
-				<rect id="octave-2-D-key" class="piano-key white-key" data-piano-key="D" stroke="#555555" fill="#FFFFF7" x="80" y="0" width="80" height="400"></rect>
-				<rect id="octave-2-E-key" class="piano-key white-key" data-piano-key="E" stroke="#555555" fill="#FFFFF7" x="160" y="0" width="80" height="400"></rect>
-				<rect id="octave-2-F-key" class="piano-key white-key" data-piano-key="F" stroke="#555555" fill="#FFFFF7" x="240" y="0" width="80" height="400"></rect>
-				<rect id="octave-2-G-key" class="piano-key white-key" data-piano-key="G" stroke="#555555" fill="#FFFFF7" x="320" y="0" width="80" height="400"></rect>
-				<rect id="octave-2-A-key" class="piano-key white-key" data-piano-key="A" stroke="#555555" fill="#FFFFF7" x="400" y="0" width="80" height="400"></rect>
-				<rect id="octave-2-B-key" class="piano-key white-key" data-piano-key="B" stroke="#555555" fill="#FFFFF7" x="480" y="0" width="80" height="400"></rect>
-				<rect id="octave-2-C#-key" class="piano-key black-key" data-piano-key="C#" stroke="#979797" fill="#4B4B4B" x="60" y="0" width="40" height="280"></rect>
-				<rect id="octave-2-D#-key" class="piano-key black-key" data-piano-key="D#" stroke="#979797" fill="#4B4B4B" x="140" y="0" width="40" height="280"></rect>
-				<rect id="octave-2-F#-key" class="piano-key black-key" data-piano-key="F#" stroke="#979797" fill="#4B4B4B" x="300" y="0" width="40" height="280"></rect>
-				<rect id="octave-2-G#-key" class="piano-key black-key" data-piano-key="G#" stroke="#979797" fill="#4B4B4B" x="380" y="0" width="40" height="280"></rect>
-				<rect id="octave-2-A#-key" class="piano-key black-key" data-piano-key="A#" stroke="#979797" fill="#4B4B4B" x="460" y="0" width="40" height="280"></rect>
+				<rect id="octave-2-C-key" (click)="playNote('C1')" class="piano-key white-key" data-piano-key="C" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
+				<rect id="octave-2-D-key" (click)="playNote('D1')" class="piano-key white-key" data-piano-key="D" stroke="#555555" fill="#FFFFF7" x="80" y="0" width="80" height="400"></rect>
+				<rect id="octave-2-E-key" (click)="playNote('E1')" class="piano-key white-key" data-piano-key="E" stroke="#555555" fill="#FFFFF7" x="160" y="0" width="80" height="400"></rect>
+				<rect id="octave-2-F-key" (click)="playNote('F1')" class="piano-key white-key" data-piano-key="F" stroke="#555555" fill="#FFFFF7" x="240" y="0" width="80" height="400"></rect>
+				<rect id="octave-2-G-key" (click)="playNote('G1')" class="piano-key white-key" data-piano-key="G" stroke="#555555" fill="#FFFFF7" x="320" y="0" width="80" height="400"></rect>
+				<rect id="octave-2-A-key" (click)="playNote('A1')" class="piano-key white-key" data-piano-key="A" stroke="#555555" fill="#FFFFF7" x="400" y="0" width="80" height="400"></rect>
+				<rect id="octave-2-B-key" (click)="playNote('B1')" class="piano-key white-key" data-piano-key="B" stroke="#555555" fill="#FFFFF7" x="480" y="0" width="80" height="400"></rect>
+				<rect id="octave-2-C#-key" (click)="playNote('C#1')" class="piano-key black-key" data-piano-key="C#" stroke="#979797" fill="#4B4B4B" x="60" y="0" width="40" height="280"></rect>
+				<rect id="octave-2-D#-key" (click)="playNote('D#1')" class="piano-key black-key" data-piano-key="D#" stroke="#979797" fill="#4B4B4B" x="140" y="0" width="40" height="280"></rect>
+				<rect id="octave-2-F#-key" (click)="playNote('F#1')" class="piano-key black-key" data-piano-key="F#" stroke="#979797" fill="#4B4B4B" x="300" y="0" width="40" height="280"></rect>
+				<rect id="octave-2-G#-key" (click)="playNote('G#1')" class="piano-key black-key" data-piano-key="G#" stroke="#979797" fill="#4B4B4B" x="380" y="0" width="40" height="280"></rect>
+				<rect id="octave-2-A#-key" (click)="playNote('A#1')" class="piano-key black-key" data-piano-key="A#" stroke="#979797" fill="#4B4B4B" x="460" y="0" width="40" height="280"></rect>
 			</g>
       <g id="octave-3" transform="translate(720.000000, 0.000000)">
-				<rect id="octave-3-C-key" class="piano-key white-key" data-piano-key="C" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
-				<rect id="octave-3-D-key" class="piano-key white-key" data-piano-key="D" stroke="#555555" fill="#FFFFF7" x="80" y="0" width="80" height="400"></rect>
-				<rect id="octave-3-E-key" class="piano-key white-key" data-piano-key="E" stroke="#555555" fill="#FFFFF7" x="160" y="0" width="80" height="400"></rect>
-				<rect id="octave-3-F-key" class="piano-key white-key" data-piano-key="F" stroke="#555555" fill="#FFFFF7" x="240" y="0" width="80" height="400"></rect>
-				<rect id="octave-3-G-key" class="piano-key white-key" data-piano-key="G" stroke="#555555" fill="#FFFFF7" x="320" y="0" width="80" height="400"></rect>
-				<rect id="octave-3-A-key" class="piano-key white-key" data-piano-key="A" stroke="#555555" fill="#FFFFF7" x="400" y="0" width="80" height="400"></rect>
-				<rect id="octave-3-B-key" class="piano-key white-key" data-piano-key="B" stroke="#555555" fill="#FFFFF7" x="480" y="0" width="80" height="400"></rect>
-				<rect id="octave-3-C#-key" class="piano-key black-key" data-piano-key="C#" stroke="#979797" fill="#4B4B4B" x="60" y="0" width="40" height="280"></rect>
-				<rect id="octave-3-D#-key" class="piano-key black-key" data-piano-key="D#" stroke="#979797" fill="#4B4B4B" x="140" y="0" width="40" height="280"></rect>
-				<rect id="octave-3-F#-key" class="piano-key black-key" data-piano-key="F#" stroke="#979797" fill="#4B4B4B" x="300" y="0" width="40" height="280"></rect>
-				<rect id="octave-3-G#-key" class="piano-key black-key" data-piano-key="G#" stroke="#979797" fill="#4B4B4B" x="380" y="0" width="40" height="280"></rect>
-				<rect id="octave-3-A#-key" class="piano-key black-key" data-piano-key="A#" stroke="#979797" fill="#4B4B4B" x="460" y="0" width="40" height="280"></rect>
+				<rect id="octave-3-C-key" (click)="playNote('C2')" class="piano-key white-key" data-piano-key="C" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
+				<rect id="octave-3-D-key" (click)="playNote('D2')" class="piano-key white-key" data-piano-key="D" stroke="#555555" fill="#FFFFF7" x="80" y="0" width="80" height="400"></rect>
+				<rect id="octave-3-E-key" (click)="playNote('E2')" class="piano-key white-key" data-piano-key="E" stroke="#555555" fill="#FFFFF7" x="160" y="0" width="80" height="400"></rect>
+				<rect id="octave-3-F-key" (click)="playNote('F2')" class="piano-key white-key" data-piano-key="F" stroke="#555555" fill="#FFFFF7" x="240" y="0" width="80" height="400"></rect>
+				<rect id="octave-3-G-key" (click)="playNote('G2')" class="piano-key white-key" data-piano-key="G" stroke="#555555" fill="#FFFFF7" x="320" y="0" width="80" height="400"></rect>
+				<rect id="octave-3-A-key" (click)="playNote('A2')" class="piano-key white-key" data-piano-key="A" stroke="#555555" fill="#FFFFF7" x="400" y="0" width="80" height="400"></rect>
+				<rect id="octave-3-B-key" (click)="playNote('B2')" class="piano-key white-key" data-piano-key="B" stroke="#555555" fill="#FFFFF7" x="480" y="0" width="80" height="400"></rect>
+				<rect id="octave-3-C#-key" (click)="playNote('C#2')" class="piano-key black-key" data-piano-key="C#" stroke="#979797" fill="#4B4B4B" x="60" y="0" width="40" height="280"></rect>
+				<rect id="octave-3-D#-key" (click)="playNote('D#2')" class="piano-key black-key" data-piano-key="D#" stroke="#979797" fill="#4B4B4B" x="140" y="0" width="40" height="280"></rect>
+				<rect id="octave-3-F#-key" (click)="playNote('F#2')" class="piano-key black-key" data-piano-key="F#" stroke="#979797" fill="#4B4B4B" x="300" y="0" width="40" height="280"></rect>
+				<rect id="octave-3-G#-key" (click)="playNote('G#2')" class="piano-key black-key" data-piano-key="G#" stroke="#979797" fill="#4B4B4B" x="380" y="0" width="40" height="280"></rect>
+				<rect id="octave-3-A#-key" (click)="playNote('A#2')" class="piano-key black-key" data-piano-key="A#" stroke="#979797" fill="#4B4B4B" x="460" y="0" width="40" height="280"></rect>
 			</g>
 			<g id="octave-4" transform="translate(1280.000000, 0.000000)">
-				<rect id="octave-4-C-key" class="piano-key white-key" data-piano-key="C" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
-				<rect id="octave-4-D-key" class="piano-key white-key" data-piano-key="D" stroke="#555555" fill="#FFFFF7" x="80" y="0" width="80" height="400"></rect>
-				<rect id="octave-4-E-key" class="piano-key white-key" data-piano-key="E" stroke="#555555" fill="#FFFFF7" x="160" y="0" width="80" height="400"></rect>
-				<rect id="octave-4-F-key" class="piano-key white-key" data-piano-key="F" stroke="#555555" fill="#FFFFF7" x="240" y="0" width="80" height="400"></rect>
-				<rect id="octave-4-G-key" class="piano-key white-key" data-piano-key="G" stroke="#555555" fill="#FFFFF7" x="320" y="0" width="80" height="400"></rect>
-				<rect id="octave-4-A-key" class="piano-key white-key" data-piano-key="A" stroke="#555555" fill="#FFFFF7" x="400" y="0" width="80" height="400"></rect>
-				<rect id="octave-4-B-key" class="piano-key white-key" data-piano-key="B" stroke="#555555" fill="#FFFFF7" x="480" y="0" width="80" height="400"></rect>
-				<rect id="octave-4-C#-key" class="piano-key black-key" data-piano-key="C#" stroke="#979797" fill="#4B4B4B" x="60" y="0" width="40" height="280"></rect>
-				<rect id="octave-4-D#-key" class="piano-key black-key" data-piano-key="D#" stroke="#979797" fill="#4B4B4B" x="140" y="0" width="40" height="280"></rect>
-				<rect id="octave-4-F#-key" class="piano-key black-key" data-piano-key="F#" stroke="#979797" fill="#4B4B4B" x="300" y="0" width="40" height="280"></rect>
-				<rect id="octave-4-G#-key" class="piano-key black-key" data-piano-key="G#" stroke="#979797" fill="#4B4B4B" x="380" y="0" width="40" height="280"></rect>
-				<rect id="octave-4-A#-key" class="piano-key black-key" data-piano-key="A#" stroke="#979797" fill="#4B4B4B" x="460" y="0" width="40" height="280"></rect>
+				<rect id="octave-4-C-key" (click)="playNote('C3')" class="piano-key white-key" data-piano-key="C" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
+				<rect id="octave-4-D-key" (click)="playNote('D3')" class="piano-key white-key" data-piano-key="D" stroke="#555555" fill="#FFFFF7" x="80" y="0" width="80" height="400"></rect>
+				<rect id="octave-4-E-key" (click)="playNote('E3')" class="piano-key white-key" data-piano-key="E" stroke="#555555" fill="#FFFFF7" x="160" y="0" width="80" height="400"></rect>
+				<rect id="octave-4-F-key" (click)="playNote('F3')" class="piano-key white-key" data-piano-key="F" stroke="#555555" fill="#FFFFF7" x="240" y="0" width="80" height="400"></rect>
+				<rect id="octave-4-G-key" (click)="playNote('G3')" class="piano-key white-key" data-piano-key="G" stroke="#555555" fill="#FFFFF7" x="320" y="0" width="80" height="400"></rect>
+				<rect id="octave-4-A-key" (click)="playNote('A3')" class="piano-key white-key" data-piano-key="A" stroke="#555555" fill="#FFFFF7" x="400" y="0" width="80" height="400"></rect>
+				<rect id="octave-4-B-key" (click)="playNote('B3')" class="piano-key white-key" data-piano-key="B" stroke="#555555" fill="#FFFFF7" x="480" y="0" width="80" height="400"></rect>
+				<rect id="octave-4-C#-key" (click)="playNote('C#3')" class="piano-key black-key" data-piano-key="C#" stroke="#979797" fill="#4B4B4B" x="60" y="0" width="40" height="280"></rect>
+				<rect id="octave-4-D#-key" (click)="playNote('D#3')" class="piano-key black-key" data-piano-key="D#" stroke="#979797" fill="#4B4B4B" x="140" y="0" width="40" height="280"></rect>
+				<rect id="octave-4-F#-key" (click)="playNote('F#3')" class="piano-key black-key" data-piano-key="F#" stroke="#979797" fill="#4B4B4B" x="300" y="0" width="40" height="280"></rect>
+				<rect id="octave-4-G#-key" (click)="playNote('G#3')" class="piano-key black-key" data-piano-key="G#" stroke="#979797" fill="#4B4B4B" x="380" y="0" width="40" height="280"></rect>
+				<rect id="octave-4-A#-key" (click)="playNote('A#3')" class="piano-key black-key" data-piano-key="A#" stroke="#979797" fill="#4B4B4B" x="460" y="0" width="40" height="280"></rect>
       </g>
 			<g id="octave-5" transform="translate(1840.000000, 0.000000)">
-				<rect id="octave-5-C-key" class="piano-key white-key" data-piano-key="C" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
-				<rect id="octave-5-D-key" class="piano-key white-key" data-piano-key="D" stroke="#555555" fill="#FFFFF7" x="80" y="0" width="80" height="400"></rect>
-				<rect id="octave-5-E-key" class="piano-key white-key" data-piano-key="E" stroke="#555555" fill="#FFFFF7" x="160" y="0" width="80" height="400"></rect>
-				<rect id="octave-5-F-key" class="piano-key white-key" data-piano-key="F" stroke="#555555" fill="#FFFFF7" x="240" y="0" width="80" height="400"></rect>
-				<rect id="octave-5-G-key" class="piano-key white-key" data-piano-key="G" stroke="#555555" fill="#FFFFF7" x="320" y="0" width="80" height="400"></rect>
-				<rect id="octave-5-A-key" class="piano-key white-key" data-piano-key="A" stroke="#555555" fill="#FFFFF7" x="400" y="0" width="80" height="400"></rect>
-				<rect id="octave-5-B-key" class="piano-key white-key" data-piano-key="B" stroke="#555555" fill="#FFFFF7" x="480" y="0" width="80" height="400"></rect>
-				<rect id="octave-5-C#-key" class="piano-key black-key" data-piano-key="C#" stroke="#979797" fill="#4B4B4B" x="60" y="0" width="40" height="280"></rect>
-				<rect id="octave-5-D#-key" class="piano-key black-key" data-piano-key="D#" stroke="#979797" fill="#4B4B4B" x="140" y="0" width="40" height="280"></rect>
-				<rect id="octave-5-F#-key" class="piano-key black-key" data-piano-key="F#" stroke="#979797" fill="#4B4B4B" x="300" y="0" width="40" height="280"></rect>
-				<rect id="octave-5-G#-key" class="piano-key black-key" data-piano-key="G#" stroke="#979797" fill="#4B4B4B" x="380" y="0" width="40" height="280"></rect>
-				<rect id="octave-5-A#-key" class="piano-key black-key" data-piano-key="A#" stroke="#979797" fill="#4B4B4B" x="460" y="0" width="40" height="280"></rect>
+				<rect id="octave-5-C-key" (click)="playNote('C4')" class="piano-key white-key" data-piano-key="C" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
+				<rect id="octave-5-D-key" (click)="playNote('D4')" class="piano-key white-key" data-piano-key="D" stroke="#555555" fill="#FFFFF7" x="80" y="0" width="80" height="400"></rect>
+				<rect id="octave-5-E-key" (click)="playNote('E4')" class="piano-key white-key" data-piano-key="E" stroke="#555555" fill="#FFFFF7" x="160" y="0" width="80" height="400"></rect>
+				<rect id="octave-5-F-key" (click)="playNote('F4')" class="piano-key white-key" data-piano-key="F" stroke="#555555" fill="#FFFFF7" x="240" y="0" width="80" height="400"></rect>
+				<rect id="octave-5-G-key" (click)="playNote('G4')" class="piano-key white-key" data-piano-key="G" stroke="#555555" fill="#FFFFF7" x="320" y="0" width="80" height="400"></rect>
+				<rect id="octave-5-A-key" (click)="playNote('A4')" class="piano-key white-key" data-piano-key="A" stroke="#555555" fill="#FFFFF7" x="400" y="0" width="80" height="400"></rect>
+				<rect id="octave-5-B-key" (click)="playNote('B4')" class="piano-key white-key" data-piano-key="B" stroke="#555555" fill="#FFFFF7" x="480" y="0" width="80" height="400"></rect>
+				<rect id="octave-5-C#-key" (click)="playNote('C#4')" class="piano-key black-key" data-piano-key="C#" stroke="#979797" fill="#4B4B4B" x="60" y="0" width="40" height="280"></rect>
+				<rect id="octave-5-D#-key" (click)="playNote('D#4')" class="piano-key black-key" data-piano-key="D#" stroke="#979797" fill="#4B4B4B" x="140" y="0" width="40" height="280"></rect>
+				<rect id="octave-5-F#-key" (click)="playNote('F#4')" class="piano-key black-key" data-piano-key="F#" stroke="#979797" fill="#4B4B4B" x="300" y="0" width="40" height="280"></rect>
+				<rect id="octave-5-G#-key" (click)="playNote('G#4')" class="piano-key black-key" data-piano-key="G#" stroke="#979797" fill="#4B4B4B" x="380" y="0" width="40" height="280"></rect>
+				<rect id="octave-5-A#-key" (click)="playNote('A#4')" class="piano-key black-key" data-piano-key="A#" stroke="#979797" fill="#4B4B4B" x="460" y="0" width="40" height="280"></rect>
 			</g>
 			<g id="octave-6" transform="translate(2400.000000, 0.000000)">
-				<rect id="octave-6-C-key" class="piano-key white-key" data-piano-key="C" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
-				<rect id="octave-6-D-key" class="piano-key white-key" data-piano-key="D" stroke="#555555" fill="#FFFFF7" x="80" y="0" width="80" height="400"></rect>
-				<rect id="octave-6-E-key" class="piano-key white-key" data-piano-key="E" stroke="#555555" fill="#FFFFF7" x="160" y="0" width="80" height="400"></rect>
-				<rect id="octave-6-F-key" class="piano-key white-key" data-piano-key="F" stroke="#555555" fill="#FFFFF7" x="240" y="0" width="80" height="400"></rect>
-				<rect id="octave-6-G-key" class="piano-key white-key" data-piano-key="G" stroke="#555555" fill="#FFFFF7" x="320" y="0" width="80" height="400"></rect>
-				<rect id="octave-6-A-key" class="piano-key white-key" data-piano-key="A" stroke="#555555" fill="#FFFFF7" x="400" y="0" width="80" height="400"></rect>
-				<rect id="octave-6-B-key" class="piano-key white-key" data-piano-key="B" stroke="#555555" fill="#FFFFF7" x="480" y="0" width="80" height="400"></rect>
-				<rect id="octave-6-C#-key" class="piano-key black-key" data-piano-key="C#" stroke="#979797" fill="#4B4B4B" x="60" y="0" width="40" height="280"></rect>
-				<rect id="octave-6-D#-key" class="piano-key black-key" data-piano-key="D#" stroke="#979797" fill="#4B4B4B" x="140" y="0" width="40" height="280"></rect>
-				<rect id="octave-6-F#-key" class="piano-key black-key" data-piano-key="F#" stroke="#979797" fill="#4B4B4B" x="300" y="0" width="40" height="280"></rect>
-				<rect id="octave-6-G#-key" class="piano-key black-key" data-piano-key="G#" stroke="#979797" fill="#4B4B4B" x="380" y="0" width="40" height="280"></rect>
-				<rect id="octave-6-A#-key" class="piano-key black-key" data-piano-key="A#" stroke="#979797" fill="#4B4B4B" x="460" y="0" width="40" height="280"></rect>
+				<rect id="octave-6-C-key" (click)="playNote('C5')" class="piano-key white-key" data-piano-key="C" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
+				<rect id="octave-6-D-key" (click)="playNote('D5')" class="piano-key white-key" data-piano-key="D" stroke="#555555" fill="#FFFFF7" x="80" y="0" width="80" height="400"></rect>
+				<rect id="octave-6-E-key" (click)="playNote('E5')" class="piano-key white-key" data-piano-key="E" stroke="#555555" fill="#FFFFF7" x="160" y="0" width="80" height="400"></rect>
+				<rect id="octave-6-F-key" (click)="playNote('F5')" class="piano-key white-key" data-piano-key="F" stroke="#555555" fill="#FFFFF7" x="240" y="0" width="80" height="400"></rect>
+				<rect id="octave-6-G-key" (click)="playNote('G5')" class="piano-key white-key" data-piano-key="G" stroke="#555555" fill="#FFFFF7" x="320" y="0" width="80" height="400"></rect>
+				<rect id="octave-6-A-key" (click)="playNote('A5')" class="piano-key white-key" data-piano-key="A" stroke="#555555" fill="#FFFFF7" x="400" y="0" width="80" height="400"></rect>
+				<rect id="octave-6-B-key" (click)="playNote('B5')" class="piano-key white-key" data-piano-key="B" stroke="#555555" fill="#FFFFF7" x="480" y="0" width="80" height="400"></rect>
+				<rect id="octave-6-C#-key" (click)="playNote('C#5')" class="piano-key black-key" data-piano-key="C#" stroke="#979797" fill="#4B4B4B" x="60" y="0" width="40" height="280"></rect>
+				<rect id="octave-6-D#-key" (click)="playNote('D#5')" class="piano-key black-key" data-piano-key="D#" stroke="#979797" fill="#4B4B4B" x="140" y="0" width="40" height="280"></rect>
+				<rect id="octave-6-F#-key" (click)="playNote('F#5')" class="piano-key black-key" data-piano-key="F#" stroke="#979797" fill="#4B4B4B" x="300" y="0" width="40" height="280"></rect>
+				<rect id="octave-6-G#-key" (click)="playNote('G#5')" class="piano-key black-key" data-piano-key="G#" stroke="#979797" fill="#4B4B4B" x="380" y="0" width="40" height="280"></rect>
+				<rect id="octave-6-A#-key" (click)="playNote('A#5')" class="piano-key black-key" data-piano-key="A#" stroke="#979797" fill="#4B4B4B" x="460" y="0" width="40" height="280"></rect>
 			</g>
       <g id="octave-7" transform="translate(2960.000000, 0.000000)">
-				<rect id="octave-7-C-key" class="piano-key white-key" data-piano-key="C" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
-				<rect id="octave-7-D-key" class="piano-key white-key" data-piano-key="D" stroke="#555555" fill="#FFFFF7" x="80" y="0" width="80" height="400"></rect>
-				<rect id="octave-7-E-key" class="piano-key white-key" data-piano-key="E" stroke="#555555" fill="#FFFFF7" x="160" y="0" width="80" height="400"></rect>
-				<rect id="octave-7-F-key" class="piano-key white-key" data-piano-key="F" stroke="#555555" fill="#FFFFF7" x="240" y="0" width="80" height="400"></rect>
-				<rect id="octave-7-G-key" class="piano-key white-key" data-piano-key="G" stroke="#555555" fill="#FFFFF7" x="320" y="0" width="80" height="400"></rect>
-				<rect id="octave-7-A-key" class="piano-key white-key" data-piano-key="A" stroke="#555555" fill="#FFFFF7" x="400" y="0" width="80" height="400"></rect>
-				<rect id="octave-7-B-key" class="piano-key white-key" data-piano-key="B" stroke="#555555" fill="#FFFFF7" x="480" y="0" width="80" height="400"></rect>
-				<rect id="octave-7-C#-key" class="piano-key black-key" data-piano-key="C#" stroke="#979797" fill="#4B4B4B" x="60" y="0" width="40" height="280"></rect>
-				<rect id="octave-7-D#-key" class="piano-key black-key" data-piano-key="D#" stroke="#979797" fill="#4B4B4B" x="140" y="0" width="40" height="280"></rect>
-				<rect id="octave-7-F#-key" class="piano-key black-key" data-piano-key="F#" stroke="#979797" fill="#4B4B4B" x="300" y="0" width="40" height="280"></rect>
-				<rect id="octave-7-G#-key" class="piano-key black-key" data-piano-key="G#" stroke="#979797" fill="#4B4B4B" x="380" y="0" width="40" height="280"></rect>
-				<rect id="octave-7-A#-key" class="piano-key black-key" data-piano-key="A#" stroke="#979797" fill="#4B4B4B" x="460" y="0" width="40" height="280"></rect>
+				<rect id="octave-7-C-key" (click)="playNote('C6')" class="piano-key white-key" data-piano-key="C" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
+				<rect id="octave-7-D-key" (click)="playNote('D6')" class="piano-key white-key" data-piano-key="D" stroke="#555555" fill="#FFFFF7" x="80" y="0" width="80" height="400"></rect>
+				<rect id="octave-7-E-key" (click)="playNote('E6')" class="piano-key white-key" data-piano-key="E" stroke="#555555" fill="#FFFFF7" x="160" y="0" width="80" height="400"></rect>
+				<rect id="octave-7-F-key" (click)="playNote('F6')" class="piano-key white-key" data-piano-key="F" stroke="#555555" fill="#FFFFF7" x="240" y="0" width="80" height="400"></rect>
+				<rect id="octave-7-G-key" (click)="playNote('G6')" class="piano-key white-key" data-piano-key="G" stroke="#555555" fill="#FFFFF7" x="320" y="0" width="80" height="400"></rect>
+				<rect id="octave-7-A-key" (click)="playNote('A6')" class="piano-key white-key" data-piano-key="A" stroke="#555555" fill="#FFFFF7" x="400" y="0" width="80" height="400"></rect>
+				<rect id="octave-7-B-key" (click)="playNote('B6')" class="piano-key white-key" data-piano-key="B" stroke="#555555" fill="#FFFFF7" x="480" y="0" width="80" height="400"></rect>
+				<rect id="octave-7-C#-key" (click)="playNote('C#6')" class="piano-key black-key" data-piano-key="C#" stroke="#979797" fill="#4B4B4B" x="60" y="0" width="40" height="280"></rect>
+				<rect id="octave-7-D#-key" (click)="playNote('D#6')" class="piano-key black-key" data-piano-key="D#" stroke="#979797" fill="#4B4B4B" x="140" y="0" width="40" height="280"></rect>
+				<rect id="octave-7-F#-key" (click)="playNote('F#6')" class="piano-key black-key" data-piano-key="F#" stroke="#979797" fill="#4B4B4B" x="300" y="0" width="40" height="280"></rect>
+				<rect id="octave-7-G#-key" (click)="playNote('G#6')" class="piano-key black-key" data-piano-key="G#" stroke="#979797" fill="#4B4B4B" x="380" y="0" width="40" height="280"></rect>
+				<rect id="octave-7-A#-key" (click)="playNote('A#6')" class="piano-key black-key" data-piano-key="A#" stroke="#979797" fill="#4B4B4B" x="460" y="0" width="40" height="280"></rect>
 			</g>
 			<g id="octave-8" transform="translate(3520.000000, 0.000000)">
-				<rect id="octave-8-C-key" class="piano-key white-key" data-piano-key="C" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
-				<rect id="octave-8-D-key" class="piano-key white-key" data-piano-key="D" stroke="#555555" fill="#FFFFF7" x="80" y="0" width="80" height="400"></rect>
-				<rect id="octave-8-E-key" class="piano-key white-key" data-piano-key="E" stroke="#555555" fill="#FFFFF7" x="160" y="0" width="80" height="400"></rect>
-				<rect id="octave-8-F-key" class="piano-key white-key" data-piano-key="F" stroke="#555555" fill="#FFFFF7" x="240" y="0" width="80" height="400"></rect>
-				<rect id="octave-8-G-key" class="piano-key white-key" data-piano-key="G" stroke="#555555" fill="#FFFFF7" x="320" y="0" width="80" height="400"></rect>
-				<rect id="octave-8-A-key" class="piano-key white-key" data-piano-key="A" stroke="#555555" fill="#FFFFF7" x="400" y="0" width="80" height="400"></rect>
-				<rect id="octave-8-B-key" class="piano-key white-key" data-piano-key="B" stroke="#555555" fill="#FFFFF7" x="480" y="0" width="80" height="400"></rect>
-				<rect id="octave-8-C#-key" class="piano-key black-key" data-piano-key="C#" stroke="#979797" fill="#4B4B4B" x="60" y="0" width="40" height="280"></rect>
-				<rect id="octave-8-D#-key" class="piano-key black-key" data-piano-key="D#" stroke="#979797" fill="#4B4B4B" x="140" y="0" width="40" height="280"></rect>
-				<rect id="octave-8-F#-key" class="piano-key black-key" data-piano-key="F#" stroke="#979797" fill="#4B4B4B" x="300" y="0" width="40" height="280"></rect>
-				<rect id="octave-8-G#-key" class="piano-key black-key" data-piano-key="G#" stroke="#979797" fill="#4B4B4B" x="380" y="0" width="40" height="280"></rect>
-				<rect id="octave-8-A#-key" class="piano-key black-key" data-piano-key="A#" stroke="#979797" fill="#4B4B4B" x="460" y="0" width="40" height="280"></rect>
+				<rect id="octave-8-C-key" (click)="playNote('C7')" class="piano-key white-key" data-piano-key="C" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
+				<rect id="octave-8-D-key" (click)="playNote('D7')" class="piano-key white-key" data-piano-key="D" stroke="#555555" fill="#FFFFF7" x="80" y="0" width="80" height="400"></rect>
+				<rect id="octave-8-E-key" (click)="playNote('E7')" class="piano-key white-key" data-piano-key="E" stroke="#555555" fill="#FFFFF7" x="160" y="0" width="80" height="400"></rect>
+				<rect id="octave-8-F-key" (click)="playNote('F7')" class="piano-key white-key" data-piano-key="F" stroke="#555555" fill="#FFFFF7" x="240" y="0" width="80" height="400"></rect>
+				<rect id="octave-8-G-key" (click)="playNote('G7')" class="piano-key white-key" data-piano-key="G" stroke="#555555" fill="#FFFFF7" x="320" y="0" width="80" height="400"></rect>
+				<rect id="octave-8-A-key" (click)="playNote('A7')" class="piano-key white-key" data-piano-key="A" stroke="#555555" fill="#FFFFF7" x="400" y="0" width="80" height="400"></rect>
+				<rect id="octave-8-B-key" (click)="playNote('B7')" class="piano-key white-key" data-piano-key="B" stroke="#555555" fill="#FFFFF7" x="480" y="0" width="80" height="400"></rect>
+				<rect id="octave-8-C#-key" (click)="playNote('C#7')" class="piano-key black-key" data-piano-key="C#" stroke="#979797" fill="#4B4B4B" x="60" y="0" width="40" height="280"></rect>
+				<rect id="octave-8-D#-key" (click)="playNote('D#7')" class="piano-key black-key" data-piano-key="D#" stroke="#979797" fill="#4B4B4B" x="140" y="0" width="40" height="280"></rect>
+				<rect id="octave-8-F#-key" (click)="playNote('F#7')" class="piano-key black-key" data-piano-key="F#" stroke="#979797" fill="#4B4B4B" x="300" y="0" width="40" height="280"></rect>
+				<rect id="octave-8-G#-key" (click)="playNote('G#7')" class="piano-key black-key" data-piano-key="G#" stroke="#979797" fill="#4B4B4B" x="380" y="0" width="40" height="280"></rect>
+				<rect id="octave-8-A#-key" (click)="playNote('A#7')" class="piano-key black-key" data-piano-key="A#" stroke="#979797" fill="#4B4B4B" x="460" y="0" width="40" height="280"></rect>
       </g>
 			<g id="octave-9" transform="translate(4080.000000, 0.000000)">
-				<rect id="octave-8-C-key" class="piano-key white-key" data-piano-key="C" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
+				<rect id="octave-8-C-key" (click)="playNote('C8')" class="piano-key white-key" data-piano-key="C" stroke="#555555" fill="#FFFFF7" x="0" y="0" width="80" height="400"></rect>
 			</g>
 		</g>
 </svg>
