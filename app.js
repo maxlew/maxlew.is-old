@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-const http 	= require('http');
-const express = require('express');
-const app = module.exports.app = express();
-const server = http.createServer(app);
-const io = require('socket.io').listen(server);
+var http 	= require('http');
+var express = require('express');
+var app = module.exports.app = express();
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);
+var compression = require('compression')
 
 app.get('/', function (req, res) {
   console.log(__dirname + '/dist/index.html');
@@ -11,6 +12,7 @@ app.get('/', function (req, res) {
 });
 
 app.use(express.static('dist'));
+app.use(compression())
 
 server.listen(80, function () {
   console.log('listening');
