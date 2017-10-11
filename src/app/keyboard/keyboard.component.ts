@@ -66,7 +66,7 @@ export class KeyboardComponent implements OnInit {
     if (event.keyCode === 90 && this.octave > 0) {
       this.octave--;
     }
-    if (event.keyCode === 88 && this.octave < 4) {
+    if (event.keyCode === 88 && this.octave < 3) {
       this.octave++;
     }
   }
