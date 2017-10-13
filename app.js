@@ -4,6 +4,7 @@ var http = require('http');
 var https = require('https');
 var fs = require('fs');
 var express = require('express');
+var helmet = require('helmet');
 var app = module.exports.app = express();
 
 var options = {
@@ -25,14 +26,15 @@ app.get('/', function (req, res) {
 });
 
 app.use(express.static('dist'));
-app.use(compression())
+app.use(compression());
+app.use(helmet());
 
 function ensureHTTPS(req, resp, next) {
-  console.log(req.headers);
-  // if (req.headers['x-forwarded-proto'] === 'https') {
+  console.log('isSecure: ' + req.secure);
+  if (req.secure) {
     return next();
-  // }
-  // resp.redirect('https://' + req.headers.host)
+  }
+  resp.redirect('https://' + req.headers.host)
 }
 
 io.on('connection', function (socket) {
