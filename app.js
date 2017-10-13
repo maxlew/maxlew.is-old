@@ -1,8 +1,21 @@
 #!/usr/bin/env node
-var http 	= require('http');
+var https = require('https');
+var fs = require('fs');
 var express = require('express');
 var app = module.exports.app = express();
-var server = http.createServer(app);
+
+var options = {
+  key: fs.readFileSync('/etc/letsencrypt/live/maxlew.is/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/maxlew.is/fullchain.pem')
+};
+
+var server = https.createServer(options, app);
+
+server.listen(443, function () {
+  console.log('listening on maxlew.is:433');
+});
+
+
 var io = require('socket.io').listen(server);
 var compression = require('compression')
 
@@ -14,9 +27,7 @@ app.get('/', function (req, res) {
 app.use(express.static('dist'));
 app.use(compression())
 
-server.listen(80, function () {
-  console.log('listening');
-});
+
 
 
 io.on('connection', function (socket) {
