@@ -28,10 +28,10 @@ app.use(express.static('dist'));
 app.use(compression())
 
 function ensureHTTPS (req, resp, next) {
-  if (req.seq) {
+  if (req.headers['x-forwarded-proto'] === 'https') {
     return next();
   }
-  resp.redirect('https://' + req.hostname + req.url);
+  resp.redirect('https://' + req.headers.host)
 }
 
 io.on('connection', function (socket) {
