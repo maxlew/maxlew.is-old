@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+var http = require('http');
 var https = require('https');
 var fs = require('fs');
 var express = require('express');
@@ -10,11 +11,8 @@ var options = {
   cert: fs.readFileSync('/etc/letsencrypt/live/maxlew.is/fullchain.pem')
 };
 
-var server = https.createServer(options, app);
-
-server.listen(443, function () {
-  console.log('listening on maxlew.is:433');
-});
+https.createServer(options, app).listen(443);
+http.createServer(app).listen(80);
 
 
 var io = require('socket.io').listen(server);
