@@ -18,14 +18,15 @@ var server = http.createServer(app).listen(80);
 var io = require('socket.io').listen(secureServer);
 var compression = require('compression')
 
+app.use(compression());
+app.use(helmet());
+
 app.all('*', ensureHTTPS)
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/dist/index.html');
 });
 
-app.use(compression());
-app.use(helmet());
 app.use(express.static('dist'));
 
 function ensureHTTPS(req, resp, next) {
