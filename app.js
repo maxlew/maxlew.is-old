@@ -21,16 +21,14 @@ var compression = require('compression')
 app.all('*', ensureHTTPS)
 
 app.get('/', function (req, res) {
-  console.log(__dirname + '/dist/index.html');
   res.sendFile(__dirname + '/dist/index.html');
 });
 
-app.use(express.static('dist'));
 app.use(compression());
 app.use(helmet());
+app.use(express.static('dist'));
 
 function ensureHTTPS(req, resp, next) {
-  console.log('isSecure: ' + req.secure);
   if (req.secure) {
     return next();
   }
@@ -39,7 +37,6 @@ function ensureHTTPS(req, resp, next) {
 
 io.on('connection', function (socket) {
   socket.on('notePlayed', function (data) {
-    console.log('notePlayed', data);
     socket.broadcast.emit('notePlayed', data.note);
   });
 });
