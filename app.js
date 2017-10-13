@@ -31,7 +31,7 @@ function ensureHTTPS (req, resp, next) {
   if (req.seq) {
     return next();
   }
-  res.redirect('https://' + req.hostname + req.url);
+  resp.redirect('https://' + req.hostname + req.url);
 }
 
 io.on('connection', function (socket) {
