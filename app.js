@@ -27,7 +27,8 @@ app.get('/', function (req, res) {
 app.use(express.static('dist'));
 app.use(compression())
 
-function ensureHTTPS (req, resp, next) {
+function ensureHTTPS(req, resp, next) {
+  console.log(req.headers);
   // if (req.headers['x-forwarded-proto'] === 'https') {
     return next();
   // }
