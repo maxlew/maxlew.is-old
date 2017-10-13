@@ -11,11 +11,11 @@ var options = {
   cert: fs.readFileSync('/etc/letsencrypt/live/maxlew.is/fullchain.pem')
 };
 
-https.createServer(options, app).listen(443);
-http.createServer(app).listen(80);
+var secureServer = https.createServer(options, app).listen(443);
+var server = http.createServer(app).listen(80);
 
 
-var io = require('socket.io').listen(server);
+var io = require('socket.io').listen(secureServer);
 var compression = require('compression')
 
 app.get('/', function (req, res) {
