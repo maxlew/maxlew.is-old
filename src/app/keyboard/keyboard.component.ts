@@ -4,7 +4,7 @@ import { keyBindings } from './keybindings.const';
 declare const Tone: any;
 declare const io: any;
 
-const socket = io('https://35.197.167.175/');
+const socket = io('https://maxlew.is/');
 
 @Component({
   selector: 'app-keyboard',
