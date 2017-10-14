@@ -14,16 +14,46 @@ const socket = io('https://maxlew.is/');
 export class KeyboardComponent implements OnInit {
 
   synth;
+  reverb;
+  filter;
+
   yourPlayedNotes = [];
   othersPlayedNotes = [];
   octave = 1;
 
   constructor() {
-    this.synth = new Tone.PolySynth(6, Tone.Synth, {
-      oscillator : {
-        partials : [0, 2, 3, 4],
-      }
+    this.reverb = new Tone.JCReverb({
+      'roomSize' : 0.8
     }).toMaster();
+    this.filter = new Tone.Filter(4000);
+    this.synth = new Tone.PolySynth(8, Tone.Synth,
+      {
+        'harmonicity': 2,
+        'oscillator': {
+          'type': 'amsine2',
+          'modulationType': 'sine',
+          'harmonicity': 1.00
+        },
+        'envelope': {
+          'attack': 0.008,
+          'decay': 4,
+          'sustain': 0.04,
+          'release': 1.2
+        },
+        'modulation': {
+          'volume': 13,
+          'type': 'amsine2',
+          'modulationType': 'sine',
+          'harmonicity': 12
+        },
+        'modulationEnvelope': {
+          'attack': 0.006,
+          'decay': 0.2,
+          'sustain': 0.2,
+          'release': 0.4
+        }
+      }
+    ).connect(this.reverb);
 
   }
 
@@ -38,6 +68,16 @@ export class KeyboardComponent implements OnInit {
     this.yourPlayedNotes.push(note);
   }
 
+  attackNote(note: string) {
+    this.synth.triggerAttack(note);
+    this.yourPlayedNotes.push(note);
+  }
+  releaseNote(note: string) {
+    this.synth.triggerRelease(note);
+    const index = this.yourPlayedNotes.indexOf(note);
+    this.yourPlayedNotes.splice(index, 1);
+  }
+
   otherPlaysNote(note: string) {
     this.synth.triggerAttackRelease(note, '4n');
     if (this.othersPlayedNotes.length >= 6) {
@@ -49,25 +89,37 @@ export class KeyboardComponent implements OnInit {
 
   noteClass(note: string) {
     if (this.yourPlayedNotes.indexOf(note) !== -1) {
-      return 'triggered-by-you-' + this.yourPlayedNotes.indexOf(note);
+      return 'triggered-by-you-' + (this.yourPlayedNotes.indexOf(note) + 1);
     }
     if (this.othersPlayedNotes.indexOf(note) !== -1) {
-      return 'triggered-by-other-' + this.othersPlayedNotes.indexOf(note);
+      return 'triggered-by-other-' + (this.othersPlayedNotes.indexOf(note) + 1);
     }
     return '';
   }
 
   @HostListener('window:keydown', ['$event'])
-  keyboardInput(event: KeyboardEvent) {
+  keyboardInputDown(event: KeyboardEvent) {
+    if (event.repeat) {
+      return;
+    }
+
     const note = keyBindings[this.octave][event.keyCode];
     if (note) {
-      this.playNote(note);
+      this.attackNote(note);
     }
     if (event.keyCode === 90 && this.octave > 0) {
       this.octave--;
     }
     if (event.keyCode === 88 && this.octave < 3) {
       this.octave++;
+    }
+  }
+
+  @HostListener('window:keyup', ['$event'])
+  keyboardInputUp(event: KeyboardEvent) {
+    const note = keyBindings[this.octave][event.keyCode];
+    if (note) {
+      this.releaseNote(note);
     }
   }
 

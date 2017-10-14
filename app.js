@@ -23,7 +23,7 @@ app.use(helmet());
 
 app.all('*', ensureHTTPS)
 
-app.get('/', function (req, res) {
+app.get('*', function (req, res, next) {
   // uri has a forward slash followed any number of any characters except full stops (up until the end of the string)
   if (/\/[^.]*$/.test(req.url)) {
       res.sendFile(__dirname + '/dist/index.html');

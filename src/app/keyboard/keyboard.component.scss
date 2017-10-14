@@ -5,7 +5,7 @@ $othersColors: #2E112D, #540032, #820333, #C9283E, #F0433A;
   width: 2040px;
   height: 200px;
   .piano-key {
-    transition: 250ms fill;
+    transition: 500ms fill;
     cursor: pointer;
     &.white-key {
       &:hover {
