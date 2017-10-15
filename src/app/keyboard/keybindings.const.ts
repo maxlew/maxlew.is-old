@@ -16,7 +16,6 @@ export const keyBindings = [
     89: 'A#2',
     85: 'F#2',
     73: 'G#2',
-    79: 'A#2',
   },
   {
     65: 'A2',
@@ -35,7 +34,6 @@ export const keyBindings = [
     89: 'A#3',
     85: 'F#3',
     73: 'G#3',
-    79: 'A#3',
   },
   {
     65: 'A3',
@@ -54,7 +52,6 @@ export const keyBindings = [
     89: 'A#4',
     85: 'F#4',
     73: 'G#4',
-    79: 'A#4',
   },
   {
     65: 'A4',
@@ -73,6 +70,5 @@ export const keyBindings = [
     89: 'A#5',
     85: 'F#5',
     73: 'G#5',
-    79: 'A#5',
   },
 ];
