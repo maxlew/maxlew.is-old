@@ -26,7 +26,7 @@ app.all('*', ensureHTTPS)
 
 app.get('*', function (req, res, next) {
   // uri has a forward slash followed any number of any characters except fjsull stops (up until the end of the string)
-  if (req.url == 'mail') {
+  if (req.url == '/mail') {
     apiProxy.web(req, res, { target: mailPileServer });
   }
   if (/\/[^.]*$/.test(req.url)) {
