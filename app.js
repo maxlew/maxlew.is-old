@@ -5,6 +5,7 @@ var https = require('https');
 var fs = require('fs');
 var express = require('express');
 var helmet = require('helmet');
+var httpProxy = require('http-proxy');
 var app = module.exports.app = express();
 
 var options = {
@@ -24,7 +25,10 @@ app.use(helmet());
 app.all('*', ensureHTTPS)
 
 app.get('*', function (req, res, next) {
-  // uri has a forward slash followed any number of any characters except full stops (up until the end of the string)
+  // uri has a forward slash followed any number of any characters except fjsull stops (up until the end of the string)
+  if (req.url == 'mail') {
+    apiProxy.web(req, res, { target: mailPileServer });
+  }
   if (/\/[^.]*$/.test(req.url)) {
       res.sendFile(__dirname + '/dist/index.html');
   } else {
