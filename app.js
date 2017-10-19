@@ -6,6 +6,7 @@ var fs = require('fs');
 var express = require('express');
 var helmet = require('helmet');
 var httpProxy = require('http-proxy');
+var apiProxy = httpProxy.createProxyServer();
 var app = module.exports.app = express();
 
 var options = {
